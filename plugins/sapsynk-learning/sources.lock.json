@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/cursor/plugins",
+  "revision": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+  "source": {
+    "upstream_path": "continual-learning",
+    "license": "MIT",
+    "files": {
+      ".cursor-plugin/plugin.json": "274196bf1fc7755fbf6d86cb7987f8248110d3b3b81557f87b936a6a1918affc",
+      "LICENSE": "702f5f331b56aff0e33d8c7826df5202559f894145eb70355c6477b55b5bb8a0",
+      "README.md": "0b45e42eca8536add2d1ae5a45e5e93898f9613587345853988c365dcdd4d0ea",
+      "agents/agents-memory-updater.md": "93dfb244f173e2240d8d6bffe4870a647d1da27d402b8de83197e3e2b471527d",
+      "assets/avatar.png": "7fcbec269ec57b3f9c227c964907692d044dbe4e8495fc42cd72a5794d7c11fb",
+      "hooks/continual-learning-stop.ts": "ad2610f3e3fe10981e9aa80a6be56e1d7ee20a203ec94585b003bd49904dc1e2",
+      "hooks/hooks.json": "bc26f31a03e0cd4be8f62c58e263117191067df726e7363af5a88084304c7c8c",
+      "skills/continual-learning/SKILL.md": "f627f733a33879b63523da7e92c8b33e6086df42a49a8139a87d1c21e7bd9b16"
+    }
+  }
+}

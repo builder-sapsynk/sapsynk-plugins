@@ -7,6 +7,8 @@ description: "Verify a claim with fresh local evidence: restate it falsifiably, 
 
 Verification proves or disproves one claim. It is not a recap. Original: [verify-this](../../upstream/teamkit/skills/verify-this/SKILL.md) (parent build bundles source).
 
+Use the project's pinned Sapsynk pstack contract, Poteto Mode and role configuration. Read this plugin's [host mapping](../../adapters/HOSTS.md). Installation does not activate hooks or grant tools.
+
 ## When
 
 Use for "verify this", "prove it works", "did this fix it", or "show me the evidence", including a before/after bug repro or a UI, CLI, API, performance, or memory measurement. If the claim is not measurable ("cleaner"), ask for a metric first.

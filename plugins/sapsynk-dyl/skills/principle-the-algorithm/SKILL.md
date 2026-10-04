@@ -16,6 +16,8 @@ Five steps, in this order, for any change bigger than an edit you can see at a g
 
 **Run it again** on the result before you ship.
 
+Use the project's pinned Sapsynk pstack contract, Poteto Mode and role configuration. Read this plugin's [host mapping](../../adapters/HOSTS.md). Installation does not activate hooks or grant tools.
+
 ## Standing limits
 
 Do not delete or waive an approved consent, tenant isolation, or acceptance requirement. Those stay even when they look slow or redundant. Standing host authority and progress reporting also stay. Question them with the owner, and leave them in place until that owner changes the approval.

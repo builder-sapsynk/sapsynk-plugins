@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/cursor/plugins",
+  "revision": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+  "source": {
+    "upstream_path": "dyl-stack",
+    "license": "MIT",
+    "files": {
+      ".cursor-plugin/plugin.json": "15bb19dab823e7d491005c6d84918b06a039d1b8fe9cc9bd23de89b3b9e80e79",
+      ".gitignore": "8ffe9de56bd30c1a95cd945262d6e3ac355ada4111551dde41f67851b9f1fc55",
+      "LICENSE": "8e52513272899b2baca49b00ea0507d197c6b1ea559adf682fdd1f4b396140b8",
+      "README.md": "bade6d3616c288188a11e84eba64c4634ffbb467847c8e4d6009b5fef34b8722",
+      "agents/dyl-agent.md": "967c363f82c2766c588aefd9239d63f0d74a3f157acfa58c882cd3f2c0446e75",
+      "assets/logo.png": "048c5e277dcc9309adc170fa0d22d55d3ed3e16569c6353e6ecb7837be386422",
+      "skills/build-figma/SKILL.md": "b769f1c84116eb2f368e52e62eb3b11b4d9e300804fbb1a11d3a9b6282610ac2",
+      "skills/build-figma/references/design-system-discovery.md": "5638ed42a58e5d5a5ffa82b3ca5980382f2338135da8d0e7101ab16ebe2b97c8",
+      "skills/build-figma/references/failure-lessons.md": "9ce0a40da4bffcc190c69418adac3ec7488f16a886a8036058c4b28670981d40",
+      "skills/build-figma/references/visual-judge.md": "8ceec58f9bc44faefa0988e071b44b26f1bc5fa4a2b99826c77240fe4b0462bd",
+      "skills/dyl-mode/SKILL.md": "1dafd1a4c2b441ee681eedeb333c2ede81b7f2f966f0adef052b2ffe82458c42",
+      "skills/dyl-mode/playbooks/bug-fix.md": "bf89ab60c7c9cf25b4f4e64f0f27d9064ce92d262f6da1fa3c632dfa5ba286cf",
+      "skills/dyl-mode/playbooks/feature.md": "a21a678219464785acd259baa4580a68eb17afdc0ed0719fe60df5441e84ae18",
+      "skills/dyl-mode/playbooks/opening-a-pr.md": "2432769a31eae19c7ff9ec4c4e03f09f4009cbc6d031237e878da69946bac1b9",
+      "skills/dyl-mode/references/requirements.md": "447b540e6d0e2ae97cb0cb24739eac9ab82031929f5614552e705539b8055fa1",
+      "skills/dyl-ready-pr/SKILL.md": "c7f15ebe3be64e58ef09668ccb84ebe339109a7cd5f832346295a91169244ab7",
+      "skills/dyl-review/SKILL.md": "d87ccc179f3b3ed644abcf4a5ba82fec7b54b3fb90566547761527beb2741aa4",
+      "skills/principle-the-algorithm/SKILL.md": "a15929a44ddd3b856092513eade5ac884516723937c5fe2667e2f95806f27f7f"
+    }
+  }
+}

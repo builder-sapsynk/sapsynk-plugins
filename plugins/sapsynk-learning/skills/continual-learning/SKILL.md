@@ -1,30 +1,22 @@
 ---
 name: continual-learning
-description: "Record a reviewed structured user preference as a candidate, then approve, promote, or roll it back with bundled scripts/memory.py. No automatic hooks and no transcript scanning."
+description: "Retain reviewed project preferences through explicit candidates, digest approval, promotion and receipt-bound rollback. No automatic transcript scanning or hooks."
 disable-model-invocation: true
 ---
 
 # Continual learning
 
-Store only a preference the user has already stated in structured form and that a person has reviewed. Do not scan transcripts, session logs, or private caller data. Do not install hooks. Nothing is written or promoted automatically.
+Use the project's pinned Sapsynk pstack contract, Poteto Mode and role configuration. Read the [host mapping](../../adapters/HOSTS.md). The complete [original source](../../upstream/continual-learning/skills/continual-learning/SKILL.md) remains bundled separately.
 
-Use the bundled script next to this skill after the parent build: `scripts/memory.py`. Do not copy a second memory framework into the plugin.
+Accept only operator-reviewed structured records with `id`, `speaker: user`, `project`, `source` and `text`. An explicit `supersedes` ID corrects a prior fact. Do not scan transcripts, read caller data or install automatic hooks. Known-secret patterns are rejected; this does not prove that arbitrary records contain no secrets. The operator reviews the exact candidate before promotion.
 
-## Lifecycle
+## Use
 
-Run these as separate explicit steps. Stop after each one and wait for the user.
+Use the bundled [memory script](../../scripts/memory.py) on a qualified host. Keep records, candidates and receipts in a private ignored project directory. Ignore `*.sapsynk-memory/` in the project's Git configuration before use. The state includes preference text and must stay out of Git.
 
-1. **Candidate.** Add one reviewed preference record (stable id, statement, scope, source note). Reject free-form dumps, secrets, and anything not a user preference.
-2. **Approval.** A person approves or rejects that candidate. Unapproved candidates do not affect later sessions.
-3. **Promotion.** Promote only an approved candidate into the active preference set.
-4. **Rollback.** Remove a promoted preference by id and restore the previous active set. Say what was removed.
+1. Create a candidate with `python3 <plugin>/scripts/memory.py candidate --project <project-id> --agents <AGENTS.md> --records <records.json> --output <candidate.json>`. This prints its SHA256 and changes no AGENTS policy.
+2. Review the candidate and approve its exact SHA256. Source speaker labels are supplied data, not independently authenticated user identities.
+3. Promote with `python3 <plugin>/scripts/memory.py promote --candidate <candidate.json> --approve <candidate-sha256>`. The script rejects stale AGENTS hashes, conflicting IDs and correction cycles. A transaction journal supports retry after interrupted writes; success is acknowledged only after AGENTS, ledger and receipt are written.
+4. Roll back the whole promotion with `python3 <plugin>/scripts/memory.py rollback --receipt <receipt.json> --approve <receipt-sha256>`. The receipt lives under `<AGENTS.md>.sapsynk-memory/receipt-<first-16-candidate-digest-characters>.json`. Rollback restores the exact prior bytes and preference history. It cannot remove one ID from a batch. A later AGENTS change requires a newly reviewed operation.
 
-Pass only the structured fields the script already accepts. Do not pipe chats, credentials, or raw tool logs into it.
-
-## Limits
-
-This skill does not claim the script sanitizes secrets. Do not put secrets in a preference. If a record might contain one, stop and ask the user to redact it before candidate creation.
-
-Host memory UIs and auto-memory hooks are native features. They are not this skill, and this package does not claim cloud and native hosts persist the same way.
-
-Originals for the other bundled skills stay at `../../upstream/` after the parent build. This skill is the portable lifecycle above. It does not vendor an upstream copy.
+Approval can be supplied by the coordinator only when the owner already authorized the exact candidate or rollback. An approved source-data scope does not approve every candidate it produces. Preserve unrelated project policies. Report unavailable host capabilities and unresolved contradictions; do not silently alter requirements.

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sapsynk-teamkit",
+  "version": "0.1.0",
+  "description": "Selected Teamkit verification workflow, adapted for portable pstack use.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Sapsynk Teamkit",
+        "shortDescription": "Evidence-based verification",
+        "longDescription": "Selected Teamkit verification workflow, adapted for portable pstack use.",
+        "developerName": "Sapsynk",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": "Use the selected explicit workflow with the project pstack configuration."
+      }
+    }
+  }
+}

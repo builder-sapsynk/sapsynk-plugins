@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sapsynk-dyl",
+  "version": "0.1.0",
+  "description": "Selected Dyl review and engineering principles with explicit capability gates.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Sapsynk Dyl",
+        "shortDescription": "Review and simplification",
+        "longDescription": "Selected Dyl review and engineering principles with explicit capability gates.",
+        "developerName": "Sapsynk",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": "Use the selected explicit workflow with the project pstack configuration."
+      }
+    }
+  }
+}

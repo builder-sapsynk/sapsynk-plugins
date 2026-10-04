@@ -8,7 +8,7 @@ License: MIT
 
 The parent build bundles upstream source. Plugin skills link to it with contained `../../upstream/...` paths and do not replace those files with rewritten copies.
 
-Included originals:
+All 55 pinned original files are preserved, including assets, source scripts and MIT licenses. The adapted skills refer to these originals:
 
 - `upstream/teamkit/skills/verify-this/SKILL.md` (teamkit)
 - `upstream/dyl/skills/dyl-review/SKILL.md` (dyl)

@@ -1,17 +1,9 @@
-# Hosts — sapsynk-learning
+# Learning host mapping
 
-Portable skill: `skills/continual-learning`. Persistence goes through the bundled `skills/continual-learning/scripts/memory.py` after the parent build. This plugin does not copy another memory framework. Other originals in this repo stay linked under [../../upstream/](../../upstream/).
+The explicit workflow is provider-independent. The [Python script](../scripts/memory.py) is qualified on this POSIX Linux host using kernel file locks, atomic replacements and directory fsync. Windows execution has not been qualified. Keep candidate/review steps portable; qualify an appropriate file-lock implementation before enabling promotion on another host.
 
-## Portable
+No hooks, transcript scanning or host auto-memory are enabled. Operators supply reviewed structured records. Promotion writes only the selected AGENTS memory section and private `<AGENTS.md>.sapsynk-memory/` state. Receipts, backups, candidates and record inputs are private; add the state pattern to project Git exclusions. Other AGENTS bytes remain intact.
 
-Explicit steps only: candidate, approval, promotion, rollback. Input is a reviewed structured user preference. No automatic hooks. No transcript or session scanning. Unapproved candidates stay inactive.
+A pending journal restores the recorded prior state before a retry. External changes that match neither recorded state cause a conflict rather than an overwrite. Kernel locks release when a process exits. Known-secret detection is incomplete, so exact candidate review remains required.
 
-Do not claim `memory.py` sanitizes secrets. Keep secrets out of preference records.
-
-## Native (host-dependent)
-
-Host auto-memory, hook installers, and transcript indexers are native features. This skill does not turn them on and does not wrap them.
-
-## Parity
-
-No cloud/native parity claim. Where a preference file lives, and whether a host injects it into the next session, depends on that host. Promotion here only updates state through `memory.py`.
+The complete [original Continual Learning source](../upstream/continual-learning/) is bundled unchanged. Automatic updater behavior is replaced by reviewed candidate promotion, an explicit behavioral deviation. No Codex/Grok/native hook or automatic persistence parity is claimed.

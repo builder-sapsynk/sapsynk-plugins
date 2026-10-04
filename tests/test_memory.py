@@ -1,6 +1,7 @@
 """Public API and CLI behavior for guarded engineering memory."""
 
 import hashlib
+import fcntl
 import json
 import os
 import stat
@@ -185,13 +186,13 @@ class MemoryTests(unittest.TestCase):
         output, digest = self._candidate([_record(self.project, "durable", "Run unit tests before promote.")])
         state = state_dir_for(self.agents)
         state.mkdir(mode=0o700)
-        os.close(os.open(state / "lock", os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600))
-        with self.assertRaises(MemoryError) as caught:
-            promote(output, digest)
-        self.assertEqual(caught.exception.code, "locked")
-        self.assertEqual(self.agents.read_bytes(), self.original)
-        self.assertFalse((state / "ledger.json").exists())
-        (state / "lock").unlink()
+        with (state / 'lock').open('w') as held:
+            fcntl.flock(held.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            with self.assertRaises(MemoryError) as caught:
+                promote(output, digest)
+            self.assertEqual(caught.exception.code, "locked")
+            self.assertEqual(self.agents.read_bytes(), self.original)
+            self.assertFalse((state / "ledger.json").exists())
         self.agents.write_bytes(self.original + b"\n# operator note\n")
         stale_bytes = self.agents.read_bytes()
         with self.assertRaises(MemoryError) as caught:

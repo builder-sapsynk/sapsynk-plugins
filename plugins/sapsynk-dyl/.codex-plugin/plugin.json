@@ -1,0 +1,19 @@
+{
+  "name": "sapsynk-dyl",
+  "version": "0.1.0",
+  "description": "Selected Dyl review and engineering principles with explicit capability gates.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "interface": {
+    "displayName": "Sapsynk Dyl",
+    "shortDescription": "Review and simplification",
+    "longDescription": "Selected Dyl review and engineering principles with explicit capability gates.",
+    "developerName": "Sapsynk",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Use the selected explicit workflow with the project pstack configuration."
+  },
+  "skills": "./skills/"
+}

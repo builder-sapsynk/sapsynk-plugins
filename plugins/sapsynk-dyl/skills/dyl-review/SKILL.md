@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 Draft a review a human can paste. One block per PR. Never post, approve, request changes, or merge. Original: [dyl-review](../../upstream/dyl/skills/dyl-review/SKILL.md).
 
+Use the project's pinned Sapsynk pstack contract, Poteto Mode and role configuration. Read this plugin's [host mapping](../../adapters/HOSTS.md). Installation does not activate hooks or grant tools.
+
 ## Depth
 
 - **quick** (only depth this package runs): one worker. The main thread does not fan out.

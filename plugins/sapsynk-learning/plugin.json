@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sapsynk-learning",
+  "version": "0.1.0",
+  "description": "Explicit project engineering memory candidates, approval, promotion and rollback.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Sapsynk Learning",
+        "shortDescription": "Reviewed project memory",
+        "longDescription": "Explicit project engineering memory candidates, approval, promotion and rollback.",
+        "developerName": "Sapsynk",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": "Use the selected explicit workflow with the project pstack configuration."
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "sapsynk-tools",
+  "interface": {
+    "displayName": "Sapsynk optional tools"
+  },
+  "plugins": [
+    {
+      "name": "sapsynk-teamkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sapsynk-teamkit"
+      },
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "sapsynk-dyl",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sapsynk-dyl"
+      },
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "sapsynk-learning",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sapsynk-learning"
+      },
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
+}

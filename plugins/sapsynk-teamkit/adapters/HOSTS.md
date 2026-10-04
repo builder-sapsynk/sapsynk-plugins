@@ -1,6 +1,6 @@
-# Hosts — sapsynk-teamkit
+# Hosts for sapsynk-teamkit
 
-Portable skill: `skills/verify-this`. Original text stays upstream and is linked, not copied: [../../upstream/teamkit/skills/verify-this/SKILL.md](../../upstream/teamkit/skills/verify-this/SKILL.md). The parent build bundles that source. Repo checkout path of the same file: `upstream/teamkit/skills/verify-this/SKILL.md`.
+Portable skill: `skills/verify-this`. Original text stays upstream and is linked, not copied: [../upstream/teamkit/skills/verify-this/SKILL.md](../upstream/teamkit/skills/verify-this/SKILL.md). The parent build bundles that source. Repo checkout path of the same file: `upstream/teamkit/skills/verify-this/SKILL.md`.
 
 ## Portable
 

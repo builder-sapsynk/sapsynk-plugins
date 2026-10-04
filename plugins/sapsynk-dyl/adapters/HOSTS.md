@@ -1,9 +1,9 @@
-# Hosts — sapsynk-dyl
+# Hosts for sapsynk-dyl
 
 Portable skills: `skills/dyl-review`, `skills/principle-the-algorithm`. Originals (parent bundles source):
 
-- [../../upstream/dyl/skills/dyl-review/SKILL.md](../../upstream/dyl/skills/dyl-review/SKILL.md)
-- [../../upstream/dyl/skills/principle-the-algorithm/SKILL.md](../../upstream/dyl/skills/principle-the-algorithm/SKILL.md)
+- [../upstream/dyl/skills/dyl-review/SKILL.md](../upstream/dyl/skills/dyl-review/SKILL.md)
+- [../upstream/dyl/skills/principle-the-algorithm/SKILL.md](../upstream/dyl/skills/principle-the-algorithm/SKILL.md)
 
 ## Portable
 

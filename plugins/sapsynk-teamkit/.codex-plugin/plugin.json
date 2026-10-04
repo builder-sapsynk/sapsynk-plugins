@@ -1,0 +1,19 @@
+{
+  "name": "sapsynk-teamkit",
+  "version": "0.1.0",
+  "description": "Selected Teamkit verification workflow, adapted for portable pstack use.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "interface": {
+    "displayName": "Sapsynk Teamkit",
+    "shortDescription": "Evidence-based verification",
+    "longDescription": "Selected Teamkit verification workflow, adapted for portable pstack use.",
+    "developerName": "Sapsynk",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Use the selected explicit workflow with the project pstack configuration."
+  },
+  "skills": "./skills/"
+}
