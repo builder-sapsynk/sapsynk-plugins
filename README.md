@@ -20,3 +20,16 @@ Run `python3 tools/build.py` and `python3 -m unittest discover -s tests -q`. The
 Use pstack's selected roles for workers. Grok is an external official CLI worker, with actual private receipts retained separately from source. These packages do not copy pstack or introduce a second broker. Cloud publication and native installation are separate operations from storing this repository in GitHub.
 
 The memory script is qualified on POSIX Linux only. Add `*.sapsynk-memory/` to each target project's Git exclusions before using it. Keep reviewed inputs, candidates and execution evidence private. No credentials or private transcripts belong in this repository.
+
+## Persistent Codex source
+
+Canonical public source is [builder-sapsynk/sapsynk-plugins](https://github.com/builder-sapsynk/sapsynk-plugins). Each plugin remains independently selectable. The reviewed 0.1.0 packages are pinned to source commit `8d662ae823ca8bba497c3dc56975eb04bf03eeaf`.
+
+```sh
+codex plugin marketplace add https://github.com/builder-sapsynk/sapsynk-plugins.git --ref 8d662ae823ca8bba497c3dc56975eb04bf03eeaf
+codex plugin add sapsynk-teamkit@sapsynk-tools
+codex plugin add sapsynk-dyl@sapsynk-tools
+codex plugin add sapsynk-learning@sapsynk-tools
+```
+
+If this marketplace was previously added from a local directory, remove only `sapsynk-tools` before adding its Git source. Project policy and exact package pins govern applicable workflows. Account cloud plugin publication is separate from Git installation; public source does not automatically make private account releases public.
