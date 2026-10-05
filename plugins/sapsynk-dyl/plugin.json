@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sapsynk-dyl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Selected Dyl review and engineering principles with explicit capability gates.",
   "author": {
     "name": "Sapsynk"

@@ -15,3 +15,7 @@ Browser screenshots, accessibility snapshots, `control-ui` / `control-cli`, CPU 
 ## Parity
 
 No cloud/native parity claim. A laptop browser trace and a headless cloud run are different measurements. Say which surface you used.
+
+## Claude Code
+
+Install `sapsynk-teamkit@sapsynk-tools` from this repository's `.claude-plugin/marketplace.json`, then invoke `/sapsynk-teamkit:verify-this` or read the skill by path. Bash, the project verifier and pstack's `control-cli` are the measurement surfaces; browser tools exist only when the session has them. The plugin loads the skill alone: the original rules, agents and other skills under `upstream/` stay dormant.

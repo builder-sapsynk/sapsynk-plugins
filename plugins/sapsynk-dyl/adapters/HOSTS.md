@@ -19,3 +19,7 @@ Portable skills: `skills/dyl-review`, `skills/principle-the-algorithm`. Original
 ## Parity
 
 No cloud/native parity claim. A host without Bugbot or thermos cannot complete deep review. Quick review is the portable path.
+
+## Claude Code
+
+Install `sapsynk-dyl@sapsynk-tools` from this repository's `.claude-plugin/marketplace.json`, then invoke `/sapsynk-dyl:dyl-review` or `/sapsynk-dyl:principle-the-algorithm`. The one quick-review worker is the role pstack resolves: a native subagent, or a Codex or Grok worker through the project's `scripts/pstack-run` in read mode. `gh` supplies PR context. Deep review stays unavailable: Bugbot and thermos are not Claude Code tools. The original `dyl-agent` under `upstream/` is not loaded.

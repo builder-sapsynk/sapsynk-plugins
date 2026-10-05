@@ -9,6 +9,21 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {'sapsynk-teamkit': 'teamkit', 'sapsynk-dyl': 'dyl',
            'sapsynk-learning': 'continual-learning'}
+MARKETPLACE = 'sapsynk-tools'
+
+
+def claude_manifest(identity):
+    """Claude Code manifest derived from the portable identity; skills only, no hooks or agents."""
+    return {**{key: identity[key] for key in ('name', 'version', 'description', 'author', 'license')}, 'skills': './skills/'}
+
+
+def claude_marketplace(root=ROOT):
+    plugins = []
+    for name in SOURCES:
+        identity = json.loads((root / 'plugins' / name / 'plugin.json').read_text())
+        plugins.append({'name': name, 'source': './plugins/' + name, 'description': identity['description']})
+    return {'name': MARKETPLACE, 'owner': {'name': 'Sapsynk'},
+            'metadata': {'description': 'Optional Sapsynk engineering workflows; pstack owns routing.'}, 'plugins': plugins}
 
 
 def verify_sources(root=ROOT):
@@ -29,6 +44,11 @@ def validate_package(package):
     native = json.loads((package / '.codex-plugin/plugin.json').read_text())
     if any(identity[key] != native[key] for key in ('name', 'version', 'description')):
         raise ValueError('native and portable identities differ')
+    if json.loads((package / '.claude-plugin/plugin.json').read_text()) != claude_manifest(identity):
+        raise ValueError('Claude Code and portable identities differ')
+    # Claude Code auto-loads these root directories; the original hooks and agents stay dormant under upstream/.
+    if any((package / directory).exists() for directory in ('hooks', 'agents', 'commands')):
+        raise ValueError('package root must not activate hooks, agents or commands')
     interface = identity['extensions']['com.openai']['interface']
     if len(interface['shortDescription']) > 30:
         raise ValueError('listing subtitle exceeds 30 characters')
@@ -78,6 +98,9 @@ def build(root=ROOT):
                 raise ValueError('learning implementation is missing')
             (package / 'scripts').mkdir(exist_ok=True)
             shutil.copyfile(script, package / 'scripts/memory.py')
+        manifest = package / '.claude-plugin/plugin.json'
+        manifest.parent.mkdir(exist_ok=True)
+        manifest.write_text(json.dumps(claude_manifest(json.loads((package / 'plugin.json').read_text())), indent=2) + '\n')
         identity = validate_package(package)
         directory = root / 'dist'
         directory.mkdir(exist_ok=True)
@@ -91,6 +114,9 @@ def build(root=ROOT):
                 entry.compress_type = zipfile.ZIP_DEFLATED
                 output.writestr(entry, path.read_bytes())
         archives.append(str(archive))
+    catalog = root / '.claude-plugin/marketplace.json'
+    catalog.parent.mkdir(exist_ok=True)
+    catalog.write_text(json.dumps(claude_marketplace(root), indent=2) + '\n')
     return archives
 
 

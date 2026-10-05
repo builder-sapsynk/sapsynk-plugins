@@ -1,0 +1,26 @@
+{
+  "name": "sapsynk-tools",
+  "owner": {
+    "name": "Sapsynk"
+  },
+  "metadata": {
+    "description": "Optional Sapsynk engineering workflows; pstack owns routing."
+  },
+  "plugins": [
+    {
+      "name": "sapsynk-teamkit",
+      "source": "./plugins/sapsynk-teamkit",
+      "description": "Selected Teamkit verification workflow, adapted for portable pstack use."
+    },
+    {
+      "name": "sapsynk-dyl",
+      "source": "./plugins/sapsynk-dyl",
+      "description": "Selected Dyl review and engineering principles with explicit capability gates."
+    },
+    {
+      "name": "sapsynk-learning",
+      "source": "./plugins/sapsynk-learning",
+      "description": "Explicit project engineering memory candidates, approval, promotion and rollback."
+    }
+  ]
+}

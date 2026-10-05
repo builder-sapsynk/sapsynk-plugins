@@ -1,0 +1,10 @@
+{
+  "name": "sapsynk-dyl",
+  "version": "0.1.1",
+  "description": "Selected Dyl review and engineering principles with explicit capability gates.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "skills": "./skills/"
+}
