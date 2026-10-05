@@ -33,6 +33,30 @@ class PackageTests(unittest.TestCase):
                 self.assertFalse(any(member.endswith('/auth.json') for member in members))
                 self.assertFalse(any('/.git/' in member or '/.pstack/runs/' in member for member in members))
 
+    def test_claude_code_marketplace_selects_skills_only(self):
+        build.build()
+        catalog = json.loads((ROOT / '.claude-plugin/marketplace.json').read_text())
+        self.assertEqual(catalog['name'], 'sapsynk-tools')
+        self.assertEqual([entry['name'] for entry in catalog['plugins']], list(build.SOURCES))
+        for entry in catalog['plugins']:
+            package = ROOT / entry['source']
+            manifest = json.loads((package / '.claude-plugin/plugin.json').read_text())
+            portable = json.loads((package / 'plugin.json').read_text())
+            self.assertEqual((manifest['name'], manifest['version']), (portable['name'], portable['version']))
+            self.assertEqual(manifest['skills'], './skills/')
+            self.assertIn('## Claude Code', (package / 'adapters/HOSTS.md').read_text())
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / 'package'
+            shutil.copytree(ROOT / 'plugins/sapsynk-learning', root)
+            # A root hooks directory would activate the original stop hook in Claude Code.
+            shutil.copytree(root / 'upstream/continual-learning/hooks', root / 'hooks')
+            with self.assertRaisesRegex(ValueError, 'must not activate'):
+                build.validate_package(root)
+            shutil.rmtree(root / 'hooks')
+            (root / '.claude-plugin/plugin.json').write_text('{"name": "other"}')
+            with self.assertRaisesRegex(ValueError, 'Claude Code and portable'):
+                build.validate_package(root)
+
     def test_changed_upstream_is_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

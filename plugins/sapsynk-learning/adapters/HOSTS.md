@@ -7,3 +7,7 @@ No hooks, transcript scanning or host auto-memory are enabled. Operators supply 
 A pending journal restores the recorded prior state before a retry. External changes that match neither recorded state cause a conflict rather than an overwrite. Kernel locks release when a process exits. Known-secret detection is incomplete, so exact candidate review remains required.
 
 The complete [original Continual Learning source](../upstream/continual-learning/) is bundled unchanged. Automatic updater behavior is replaced by reviewed candidate promotion, an explicit behavioral deviation. No Codex/Grok/native hook or automatic persistence parity is claimed.
+
+## Claude Code
+
+Install `sapsynk-learning@sapsynk-tools` from this repository's `.claude-plugin/marketplace.json`, then invoke `/sapsynk-learning:continual-learning`. Run the bundled script by its installed path with `python3`. The plugin ships no `hooks/` directory, so the original stop hook under `upstream/` never runs, and Claude Code's own auto-memory is a separate store this workflow does not write. Promotion still needs approval of the exact candidate digest.

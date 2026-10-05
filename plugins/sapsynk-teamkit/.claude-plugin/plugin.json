@@ -1,0 +1,10 @@
+{
+  "name": "sapsynk-teamkit",
+  "version": "0.1.1",
+  "description": "Selected Teamkit verification workflow, adapted for portable pstack use.",
+  "author": {
+    "name": "Sapsynk"
+  },
+  "license": "MIT",
+  "skills": "./skills/"
+}

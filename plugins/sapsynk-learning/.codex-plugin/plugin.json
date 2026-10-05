@@ -1,6 +1,6 @@
 {
   "name": "sapsynk-learning",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Explicit project engineering memory candidates, approval, promotion and rollback.",
   "author": {
     "name": "Sapsynk"
